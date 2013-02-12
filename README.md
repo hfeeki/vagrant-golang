@@ -11,6 +11,17 @@ apt cookbook : https://github.com/opscode-cookbooks/apt.git
 build-essential cookbook : https://github.com/opscode-cookbooks/build-essential.git  
 
 
+Provision
+==========
+recipe golang::local will download code to "/home/vagrant/go" and compile, install it.  
+recipe main will install mongodb  
+```
+config.vm.provision :chef_solo do |chef|
+     chef.cookbooks_path = "cookbooks"
+     chef.add_recipe "main"
+     chef.add_recipe "golang::local"
+end
+```
 
 
 
