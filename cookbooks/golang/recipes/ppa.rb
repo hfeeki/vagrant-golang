@@ -24,7 +24,7 @@ end
 
 bash "Export ENV Vars" do
   code <<-EOC
-    echo 'export GOBIN=~/go/bin' >> /home/vagrant/.bashrc
+    echo 'export GOBIN=/usr/local/go/bin' >> /home/vagrant/.bashrc
     echo 'export PATH=$PATH:$GOBIN' >> /home/vagrant/.bashrc
     source /home/vagrant/.bashrc
   EOC
